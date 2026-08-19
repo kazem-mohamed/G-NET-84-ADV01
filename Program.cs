@@ -43,6 +43,22 @@ public class Pair<TKey, TValue>
 }
 #endregion
 
+#region Question 4
+// A generic method declares its own type parameter on the method itself, independent of
+// its containing type, so the type is inferred separately for every call - for example
+// Swap<T>(ref T a, ref T b) works for any type without the class that holds it needing
+// to be generic.
+public class SwapHelper
+{
+    public static void Swap<T>(ref T a, ref T b)
+    {
+        T temp = a;
+        a = b;
+        b = temp;
+    }
+}
+#endregion
+
 public class Program
 {
     public static void Main(string[] args)
