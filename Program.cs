@@ -78,6 +78,19 @@ public class MaxFinder
 }
 #endregion
 
+#region Question 6
+// A generic interface declares members using a type parameter, so implementers decide
+// the concrete type when they implement it - for example IRepository<T> can be
+// implemented as IRepository<Customer> or IRepository<Order> while sharing the same
+// contract shape.
+public interface IRepository<T>
+{
+    void Add(T item);
+    T GetById(int id);
+    IEnumerable<T> GetAll();
+}
+#endregion
+
 public class Program
 {
     public static void Main(string[] args)
