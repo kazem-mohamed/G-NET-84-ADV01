@@ -91,6 +91,19 @@ public interface IRepository<T>
 }
 #endregion
 
+#region Question 7
+// The 'struct' constraint restricts a type parameter to non-nullable value types only
+// (any struct, including built-in numeric types and enums), so reference types and
+// Nullable<T> cannot be used as T.
+public class StructConstraintExample
+{
+    public static bool IsDefault<T>(T value) where T : struct
+    {
+        return value.Equals(default(T));
+    }
+}
+#endregion
+
 public class Program
 {
     public static void Main(string[] args)
