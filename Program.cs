@@ -9,6 +9,23 @@
 // they let one implementation be reused for any type without duplicating code.
 #endregion
 
+#region Question 2
+public class Container<T>
+{
+    private T item = default!;
+
+    public void Add(T item)
+    {
+        this.item = item;
+    }
+
+    public T Get()
+    {
+        return item;
+    }
+}
+#endregion
+
 public class Program
 {
     public static void Main(string[] args)
