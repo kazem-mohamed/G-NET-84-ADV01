@@ -116,6 +116,18 @@ public class ClassConstraintExample
 }
 #endregion
 
+#region Question 9
+// The 'new()' constraint requires the type argument to have an accessible parameterless
+// constructor, which lets generic code create new instances of T with "new T()".
+public class NewConstraintExample
+{
+    public static T CreateInstance<T>() where T : new()
+    {
+        return new T();
+    }
+}
+#endregion
+
 public class Program
 {
     public static void Main(string[] args)
