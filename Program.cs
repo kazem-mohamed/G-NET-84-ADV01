@@ -104,6 +104,18 @@ public class StructConstraintExample
 }
 #endregion
 
+#region Question 8
+// The 'class' constraint restricts a type parameter to reference types only, so value
+// types such as int or DateTime cannot be used as T.
+public class ClassConstraintExample
+{
+    public static bool IsNull<T>(T value) where T : class
+    {
+        return value == null;
+    }
+}
+#endregion
+
 public class Program
 {
     public static void Main(string[] args)
