@@ -59,6 +59,25 @@ public class SwapHelper
 }
 #endregion
 
+#region Question 5
+public class MaxFinder
+{
+    public static T FindMax<T>(T[] values) where T : IComparable<T>
+    {
+        T max = values[0];
+        for (int i = 1; i < values.Length; i++)
+        {
+            if (values[i].CompareTo(max) > 0)
+            {
+                max = values[i];
+            }
+        }
+
+        return max;
+    }
+}
+#endregion
+
 public class Program
 {
     public static void Main(string[] args)
