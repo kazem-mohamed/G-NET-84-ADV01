@@ -162,6 +162,22 @@ public class BaseClassConstraintExample
 }
 #endregion
 
+#region Question 12
+// Multiple constraints on the same type parameter are combined after a single 'where'
+// clause, separated by commas - for example "where T : class, IComparable<T>, new()" -
+// and the type argument must satisfy every listed constraint at once. When a class or
+// struct constraint is used it must come first, followed by interface constraints, with
+// the new() constraint always listed last.
+public class MultipleConstraintsExample
+{
+    public static T CreateAndCompare<T>(T other) where T : class, IComparable<T>, new()
+    {
+        T created = new T();
+        return created.CompareTo(other) >= 0 ? created : other;
+    }
+}
+#endregion
+
 public class Program
 {
     public static void Main(string[] args)
