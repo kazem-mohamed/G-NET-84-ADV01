@@ -128,6 +128,23 @@ public class NewConstraintExample
 }
 #endregion
 
+#region Question 10
+// An interface constraint restricts a type parameter to types that implement a specific
+// interface, which lets generic code call that interface's members on T.
+public interface IIdentifiable
+{
+    int Id { get; }
+}
+
+public class InterfaceConstraintExample
+{
+    public static int GetId<T>(T item) where T : IIdentifiable
+    {
+        return item.Id;
+    }
+}
+#endregion
+
 public class Program
 {
     public static void Main(string[] args)
