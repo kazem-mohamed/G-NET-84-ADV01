@@ -26,6 +26,23 @@ public class Container<T>
 }
 #endregion
 
+#region Question 3
+// A generic type can declare more than one type parameter, separated by commas inside
+// the angle brackets (for example Pair<TKey, TValue>), so a single type can work with
+// two independent types at the same time instead of being limited to just one.
+public class Pair<TKey, TValue>
+{
+    public TKey Key { get; }
+    public TValue Value { get; }
+
+    public Pair(TKey key, TValue value)
+    {
+        Key = key;
+        Value = value;
+    }
+}
+#endregion
+
 public class Program
 {
     public static void Main(string[] args)
