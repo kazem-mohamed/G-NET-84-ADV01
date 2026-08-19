@@ -145,6 +145,23 @@ public class InterfaceConstraintExample
 }
 #endregion
 
+#region Question 11
+// A base class constraint restricts a type parameter to that class or any class derived
+// from it, which lets generic code use the base class's members on T.
+public abstract class ShapeBase
+{
+    public abstract double GetArea();
+}
+
+public class BaseClassConstraintExample
+{
+    public static double GetArea<T>(T shape) where T : ShapeBase
+    {
+        return shape.GetArea();
+    }
+}
+#endregion
+
 public class Program
 {
     public static void Main(string[] args)
